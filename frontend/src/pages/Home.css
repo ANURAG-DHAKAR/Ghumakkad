@@ -1,0 +1,253 @@
+.home-page {
+  width: 100%;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--app-padding);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 500px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  background: var(--primary);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-subline {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  max-width: 320px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* Featured Section */
+.featured-section {
+  padding: 30px var(--app-padding);
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h3 {
+  font-size: 20px;
+}
+
+.see-all {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.dest-card {
+  min-width: 260px;
+  height: 300px;
+  border-radius: 16px;
+  scroll-snap-align: start;
+  position: relative;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  border: 1px solid var(--surface-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-wrapper {
+  width: 100%;
+  height: 220px;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.dest-card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-overlay {
+  padding: 15px;
+  background: var(--surface);
+  border-radius: 0 0 16px 16px;
+  flex: 1;
+}
+
+.card-overlay h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.card-overlay p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Gallery Preview Layout */
+.gallery-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .gallery-preview-grid {
+    grid-template-rows: repeat(2, 150px);
+  }
+}
+
+.preview-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.preview-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.preview-photo:hover img {
+  transform: scale(1.05);
+}
+
+.preview-photo.large {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+/* Video Reels */
+.video-card {
+  min-width: 180px;
+  height: 300px;
+  border-radius: 16px;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.video-card:hover img {
+  transform: scale(1.05);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.video-card:hover .video-overlay {
+  background: rgba(0,0,0,0.1);
+}
+
+.play-icon {
+  opacity: 0.8;
+  transition: transform 0.2s;
+}
+
+.video-card:hover .play-icon {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.video-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+}
+
+.video-info h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.duration {
+  font-size: 11px;
+  background: rgba(0,0,0,0.5);
+  padding: 2px 6px;
+  border-radius: 4px;
+}

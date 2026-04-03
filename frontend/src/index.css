@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-main: #ffffff;
+  --bg-secondary: #f7f7f9;
+  --surface: #ffffff;
+  --surface-border: #e2e2e6;
+  --primary: #f83a59; /* Modern reddish-pink, Airbnb vibe */
+  --primary-hover: #e02f4a;
+  --text-main: #222222;
+  --text-muted: #717171;
+  --danger: #e63946;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 6px 25px rgba(0, 0, 0, 0.08);
+  --app-padding: 24px;
+  --bottom-nav-height: 70px;
+  --max-app-width: 1200px; /* Limit stretch on desktop */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent; 
+  width: 100%;
+  height: 100%;
+}
+
+/* Hide scrollbar for a clean native app look */
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+/* Main Application Wrapper */
+.app-container {
+  width: 100%;
+  max-width: var(--max-app-width);
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: var(--bg-main);
+  box-shadow: 0 0 40px rgba(0,0,0,0.03);
+  padding-bottom: var(--bottom-nav-height);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base Card UI (Replacing Glassmorphism) */
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.2s ease;
+}
+
+.glass-pill {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 9999px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.text-gradient {
+  color: var(--primary);
+}
+
+/* Clean Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+/* Standardized Buttons */
+button {
+  font-family: inherit;
+  outline: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text-main);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--bg-secondary);
+}
+
+/* Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  font-family: inherit;
+  user-select: auto;
+}
+
+/* Spinner for Buttons */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-left-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,180 @@
+.trips-page {
+  padding: 20px var(--app-padding);
+}
+
+.trips-header {
+  margin-bottom: 16px;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.trip-card {
+  padding: 14px;
+  cursor: default;
+}
+
+.trip-card-top {
+  cursor: pointer;
+}
+
+.trip-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.trip-title h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.trip-meta {
+  display: grid;
+  gap: 6px;
+}
+
+.meta-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.trip-card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn-secondary.danger {
+  border-color: rgba(255, 107, 107, 0.35);
+  color: var(--danger);
+}
+
+.trip-alert {
+  padding: 12px 14px;
+  margin: 10px 0 14px;
+}
+
+.empty-trips {
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.trip-form {
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+  max-width: 760px;
+}
+
+.form-row {
+  display: grid;
+  gap: 8px;
+}
+
+.form-row label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--surface-border);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 12px 12px;
+  outline: none;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 560px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trip-details {
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.trip-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.detail-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.detail-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 14px;
+}
+
+.itinerary-panel {
+  padding: 16px;
+}
+
+.itinerary-list {
+  display: grid;
+  gap: 12px;
+}
+
+.itinerary-day {
+  border: 1px solid var(--surface-border);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.itinerary-day-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.day-pill {
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 6px 10px;
+  border: 1px solid var(--surface-border);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.itinerary-activities {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
