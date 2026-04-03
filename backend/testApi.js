@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://ghumakkad-backend.onrender.com/';
 let token = '';
 let destinationId = '';
 let tripId = '';
